@@ -182,7 +182,9 @@
         "less",
         "most",
         "moreutils",
-        "uutils-coreutils"
+        "uutils-coreutils",
+        "gnome-screenshot",
+        "python-pygments"
     ],
     "parallel_downloads": 0,
     "profile_config": {
