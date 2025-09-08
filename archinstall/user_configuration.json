@@ -1,0 +1,203 @@
+{
+    "app_config": {
+        "audio_config": {
+            "audio": "pipewire"
+        },
+        "bluetooth_config": {
+            "enabled": true
+        }
+    },
+    "archinstall-language": "English",
+    "auth_config": {},
+    "bootloader": "Grub",
+    "custom_commands": [
+    	"pushd /home/sonapraneeth",
+    	"npm install -g @google/gemini-cli",
+    	"mkdir Softwares && pushd Softwares",
+    	"wget https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip",
+    	"unzip CascadiaCode-2407.24.zip CascadiaCode-2407.24",
+    	"pushd CascadiaCode-2407.24",
+    	"sudo fc-cache -fv",
+    	"popd",
+    	"git clone https://aur.archlinux.org/yay.git",
+    	"pushd yay",
+    	"makepkg -si",
+	"yay -S google-chrome zen-browser-bin visual-studio-code-bin anaconda"
+    ],
+    "disk_config": {
+        "btrfs_options": {
+            "snapshot_config": null
+        },
+        "config_type": "manual_partitioning",
+        "device_modifications": [
+            {
+                "device": "/dev/sda",
+                "partitions": [
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [
+                            "boot"
+                        ],
+                        "fs_type": "fat32",
+                        "mount_options": [],
+                        "mountpoint": "/boot",
+                        "obj_id": "a57fc4f1-e747-43bb-8f46-fe2297046205",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "GiB",
+                            "value": 1
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "MiB",
+                            "value": 1
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [],
+                        "fs_type": "btrfs",
+                        "mount_options": [
+                            "compress=zstd"
+                        ],
+                        "mountpoint": "/",
+                        "obj_id": "8a9a810d-0f30-44c3-8040-54fd7f677624",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 535796121600
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 1074790400
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    }
+                ],
+                "wipe": true
+            }
+        ]
+    },
+    "hostname": "virtualbox",
+    "kernels": [
+        "linux-lts"
+    ],
+    "locale_config": {
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US.UTF-8"
+    },
+    "mirror_config": {
+        "custom_repositories": [],
+        "custom_servers": [],
+        "mirror_regions": {
+            "India": [
+                "http://in.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "https://in.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "https://mirror.albony.in/archlinux/$repo/os/$arch",
+                "https://mirror.del2.albony.in/archlinux/$repo/os/$arch",
+                "https://mirror.maa.albony.in/archlinux/$repo/os/$arch",
+                "http://in-mirror.garudalinux.org/archlinux/$repo/os/$arch",
+                "http://mirror.sahil.world/archlinux/$repo/os/$arch",
+                "https://mirror.sahil.world/archlinux/$repo/os/$arch",
+                "http://mirrors.nxtgen.com/archlinux-mirror/$repo/os/$arch",
+                "https://mirrors.nxtgen.com/archlinux-mirror/$repo/os/$arch",
+                "https://mirrors.abhy.me/archlinux/$repo/os/$arch",
+                "https://in.arch.niranjan.co/$repo/os/$arch",
+                "http://mirrors.saswata.cc/archlinux/$repo/os/$arch",
+                "https://mirrors.saswata.cc/archlinux/$repo/os/$arch",
+                "https://archlinux.kushwanthreddy.com/$repo/os/$arch"
+            ]
+        },
+        "optional_repositories": []
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "ntp": true,
+    "packages": [
+        "atuin",
+        "aspnet-runtime",
+        "base-devel",
+        "bash",
+        "bash-completion",
+        "bash-language-server",
+        "clang",
+        "dotnet-host",
+        "dotnet-runtime",
+        "dotnet-sdk",
+        "ffmpeg",
+        "fuse2",
+        "fzf",
+        "gcc",
+        "gdb",
+        "ghostty",
+        "git",
+        "llvm",
+        "neovim",
+        "nushell",
+        "papers",
+        "python-pygments",
+        "starship",
+        "texstudio",
+        "vim",
+        "zed",
+        "zoxide",
+        "zsh",
+        "zsh-autocomplete",
+        "zsh-autosuggestions",
+        "zsh-completions",
+        "zsh-doc",
+        "7zip",
+        "nodejs",
+        "npm",
+        "wget",
+        "xorg-xrandr",
+        "ttf-cascadia-code",
+        "ttf-cascadia-code-nerd",
+        "ttf-noto-nerd",
+        "noto-fonts",
+        "openssh",
+        "less",
+        "most",
+        "moreutils",
+        "uutils-coreutils"
+    ],
+    "parallel_downloads": 0,
+    "profile_config": {
+        "gfx_driver": "Intel (open-source)",
+        "greeter": "gdm",
+        "profile": {
+            "custom_settings": {
+                "GNOME": {}
+            },
+            "details": [
+                "GNOME"
+            ],
+            "main": "Desktop"
+        }
+    },
+    "script": null,
+    "services": [],
+    "swap": true,
+    "timezone": "Asia/Kolkata",
+    "version": "3.0.9"
+}
