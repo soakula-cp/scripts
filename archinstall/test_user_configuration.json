@@ -11,8 +11,8 @@
     "auth_config": {},
     "bootloader": "Grub",
     "custom_commands": [
-        "mkdir -p /mnt/home/sonapraneeth/Softwares",
-        "pushd /mnt/home/sonapraneeth/Softwares && git clone https://github.com/soakula-cp/scripts.git && chmod +x scripts/archinstall/test_install.sh && bash ./test_install.sh > /mnt/home/sonapraneeth/Softwares/install.log"
+        "mkdir -p /home/sonapraneeth/Softwares",
+        "pushd /home/sonapraneeth/Softwares && git clone https://github.com/soakula-cp/scripts.git && pushd scripts/archinstall && chmod +x test_install.sh && bash ./test_install.sh > /home/sonapraneeth/Softwares/install.log"
     ],
     "disk_config": {
         "btrfs_options": {
@@ -124,6 +124,8 @@
     },
     "ntp": true,
     "packages": [
+        "git",
+        "go"
     ],
     "parallel_downloads": 0,
     "profile_config": {

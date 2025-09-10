@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mkdir -p /mnt/home/sonapraneeth/Softwares
-pushd /mnt/home/sonapraneeth/Softwares
-cat "test.txt" > test.txt
+mkdir -p /home/sonapraneeth/Softwares
+pushd /home/sonapraneeth/Softwares
+echo "test.txt" > test.txt
