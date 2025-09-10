@@ -11,21 +11,8 @@
     "auth_config": {},
     "bootloader": "Grub",
     "custom_commands": [
-        "pushd /mnt/home/sonapraneeth",
-        "npm install -g @google/gemini-cli",
-        "mkdir Softwares && pushd Softwares",
-        "wget https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip",
-        "unzip CascadiaCode-2407.24.zip -d /mnt/home/sonapraneeth/Softwares/CascadiaCode-2407.24",
-        "pushd CascadiaCode-2407.24",
-        "sudo fc-cache -fv",
-        "popd",
-        "git config --global credential.helper store",
-        "git config --global pull.rebase false",
-        "git config --global core.editor vim",
-        "git clone https://aur.archlinux.org/yay.git",
-        "pushd yay",
-        "makepkg -si",
-        "yay -S google-chrome zen-browser-bin visual-studio-code-bin anaconda"
+        "mkdir -p /mnt/home/sonapraneeth/Softwares",
+        "pushd /mnt/home/sonapraneeth/Softwares && git clone https://github.com/soakula-cp/scripts.git && pushd scripts/archinstall && chmod +x install.sh && bash ./install.sh > /mnt/home/sonapraneeth/Softwares/install.log"
     ],
     "disk_config": {
         "btrfs_options": {
@@ -158,6 +145,7 @@
         "gdb",
         "ghostty",
         "git",
+        "go",
         "htop",
         "libreoffice-still",
         "llvm",
