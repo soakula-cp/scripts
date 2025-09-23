@@ -139,6 +139,7 @@
         "dotnet-runtime",
         "dotnet-sdk",
         "eza",
+        "fd",
         "fuse2",
         "fzf",
         "gcc",
