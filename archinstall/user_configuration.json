@@ -224,7 +224,7 @@
         "sqlite-tcl",
         "sqlite-doc",
         "sqlite-analyzer",
-        "sqlite"
+        "sqlite",
         "ssh-tools",
         "starship",
         "sudo",
