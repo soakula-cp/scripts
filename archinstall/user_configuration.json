@@ -151,7 +151,7 @@
                 "https://mirror.dawn.org.in/arch/$repo/os/$arch"
             ]
         },
-        "optional_repositories": []
+        "optional_repositories": [
             "multilib"
         ]
     },
