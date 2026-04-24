@@ -34,7 +34,7 @@
         "btrfs_options": {
             "snapshot_config": null
         },
-        "config_type": "default_layout",
+        "config_type": "manual_partitioning",
         "device_modifications": [
             {
                 "device": "/dev/sda",
@@ -48,7 +48,7 @@
                         "fs_type": "fat32",
                         "mount_options": [],
                         "mountpoint": "/boot",
-                        "obj_id": "79937697-72e6-4fc6-a7c8-352fe0ae9325",
+                        "obj_id": "a57fc4f1-e747-43bb-8f46-fe2297046205",
                         "size": {
                             "sector_size": {
                                 "unit": "B",
@@ -69,39 +69,22 @@
                         "type": "primary"
                     },
                     {
-                        "btrfs": [
-                            {
-                                "mountpoint": "/",
-                                "name": "@"
-                            },
-                            {
-                                "mountpoint": "/home",
-                                "name": "@home"
-                            },
-                            {
-                                "mountpoint": "/var/log",
-                                "name": "@log"
-                            },
-                            {
-                                "mountpoint": "/var/cache/pacman/pkg",
-                                "name": "@pkg"
-                            }
-                        ],
+                        "btrfs": [],
                         "dev_path": null,
                         "flags": [],
                         "fs_type": "btrfs",
                         "mount_options": [
                             "compress=zstd"
                         ],
-                        "mountpoint": null,
-                        "obj_id": "90158c07-029c-465a-8565-ec347f0f227a",
+                        "mountpoint": "/",
+                        "obj_id": "8a9a810d-0f30-44c3-8040-54fd7f677624",
                         "size": {
                             "sector_size": {
                                 "unit": "B",
                                 "value": 512
                             },
                             "unit": "B",
-                            "value": 213673574400
+                            "value": 535796121600
                         },
                         "start": {
                             "sector_size": {
