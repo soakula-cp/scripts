@@ -5,11 +5,27 @@
         },
         "bluetooth_config": {
             "enabled": true
+        },
+        "firewall_config": {
+            "firewall": "firewalld"
+        },
+        "fonts_config": {
+            "fonts": [
+                "noto-fonts",
+                "noto-fonts-emoji"
+            ]
+        },
+        "print_service_config": {
+            "enabled": true
         }
     },
     "archinstall-language": "English",
     "auth_config": {},
-    "bootloader": "Grub",
+    "bootloader_config": {
+        "bootloader": "Grub",
+        "removable": false,
+        "uki": false
+    },
     "custom_commands": [
         "mkdir -p /mnt/home/sonapraneeth/Softwares",
         "pushd /mnt/home/sonapraneeth/Softwares && git clone https://github.com/soakula-cp/scripts.git && pushd scripts/archinstall && chmod +x install.sh && bash ./install.sh > /mnt/home/sonapraneeth/Softwares/install.log"
@@ -18,7 +34,7 @@
         "btrfs_options": {
             "snapshot_config": null
         },
-        "config_type": "manual_partitioning",
+        "config_type": "default_layout",
         "device_modifications": [
             {
                 "device": "/dev/sda",
@@ -32,7 +48,7 @@
                         "fs_type": "fat32",
                         "mount_options": [],
                         "mountpoint": "/boot",
-                        "obj_id": "a57fc4f1-e747-43bb-8f46-fe2297046205",
+                        "obj_id": "79937697-72e6-4fc6-a7c8-352fe0ae9325",
                         "size": {
                             "sector_size": {
                                 "unit": "B",
@@ -53,22 +69,39 @@
                         "type": "primary"
                     },
                     {
-                        "btrfs": [],
+                        "btrfs": [
+                            {
+                                "mountpoint": "/",
+                                "name": "@"
+                            },
+                            {
+                                "mountpoint": "/home",
+                                "name": "@home"
+                            },
+                            {
+                                "mountpoint": "/var/log",
+                                "name": "@log"
+                            },
+                            {
+                                "mountpoint": "/var/cache/pacman/pkg",
+                                "name": "@pkg"
+                            }
+                        ],
                         "dev_path": null,
                         "flags": [],
                         "fs_type": "btrfs",
                         "mount_options": [
                             "compress=zstd"
                         ],
-                        "mountpoint": "/",
-                        "obj_id": "8a9a810d-0f30-44c3-8040-54fd7f677624",
+                        "mountpoint": null,
+                        "obj_id": "90158c07-029c-465a-8565-ec347f0f227a",
                         "size": {
                             "sector_size": {
                                 "unit": "B",
                                 "value": 512
                             },
                             "unit": "B",
-                            "value": 535796121600
+                            "value": 213673574400
                         },
                         "start": {
                             "sector_size": {
@@ -86,7 +119,7 @@
             }
         ]
     },
-    "hostname": "virtualbox",
+    "hostname": "vmware",
     "kernels": [
         "linux-lts"
     ],
@@ -111,33 +144,48 @@
                 "http://mirrors.nxtgen.com/archlinux-mirror/$repo/os/$arch",
                 "https://mirrors.nxtgen.com/archlinux-mirror/$repo/os/$arch",
                 "https://mirrors.abhy.me/archlinux/$repo/os/$arch",
+                "http://mirror.4v1.in/archlinux/$repo/os/$arch",
+                "https://mirror.4v1.in/archlinux/$repo/os/$arch",
                 "https://in.arch.niranjan.co/$repo/os/$arch",
-                "http://mirrors.saswata.cc/archlinux/$repo/os/$arch",
-                "https://mirrors.saswata.cc/archlinux/$repo/os/$arch",
-                "https://archlinux.kushwanthreddy.com/$repo/os/$arch"
+                "https://archlinux.kushwanthreddy.com/$repo/os/$arch",
+                "https://mirror.dawn.org.in/arch/$repo/os/$arch"
             ]
         },
         "optional_repositories": []
+            "multilib"
+        ]
     },
     "network_config": {
         "type": "nm"
     },
     "ntp": true,
     "packages": [
-        "atuin",
+        "7zip",
         "aspnet-runtime",
+        "atuin",
+        "atuin-server",
+        "base",
         "base-devel",
         "bash",
         "bash-completion",
         "bash-language-server",
+        "bashtop",
         "bat",
         "btop",
+        "bun",
         "clang",
         "cmake",
+        "cmake-extras",
         "cpufetch",
+        "cpupower",
+        "docker",
+        "docker-compose",
+        "docker-machine",
+        "dockerfile-language-server",
         "dotnet-host",
         "dotnet-runtime",
         "dotnet-sdk",
+        "dotnet-targeting-pack",
         "eza",
         "fd",
         "fuse2",
@@ -145,48 +193,64 @@
         "gcc",
         "gdb",
         "ghostty",
+        "ghostty-nautilus",
+        "ghostty-shell-integration",
+        "ghostty-terminfo",
         "git",
+        "git-zsh-completion",
+        "gnome-screenshot",
         "go",
         "htop",
+        "lazydocker",
+        "less",
         "libreoffice-still",
         "llvm",
+        "most",
         "neovim",
         "net-tools",
-        "nushell",
+        "nodejs",
+        "notofonts",
+        "npm",
+        "nushell",        
         "obsidian",
+        "openssh",
         "papers",
+        "podman-docker",
+        "postgresql",
+        "python-docker",
         "python-pygments",
-        "starship",
+        "ripgrep",
+        "sqlitebrowser",
+        "sqlite-tcl",
+        "sqlite-doc",
+        "sqlite-analyzer",
+        "sqlite"
         "ssh-tools",
-        "texstudio",
+        "starship",
+        "sudo",
+        "texstudio",        
+        "tmux",
+        "ttf-cascadia-code",
+        "ttf-cascadia-code-nerd",
+        "ttf-cascadia-mono-nerd",
+        "ttf-noto-nerd",
         "vim",
+        "xorg-xrandr",
         "zed",
         "zoxide",
         "zsh",
         "zsh-autocomplete",
         "zsh-autosuggestions",
-        "zsh-completions",
         "zsh-doc",
-        "7zip",
-        "nodejs",
-        "npm",
-        "wget",
-        "xorg-xrandr",
-        "ttf-cascadia-code",
-        "ttf-cascadia-code-nerd",
-        "ttf-noto-nerd",
-        "noto-fonts",
-        "openssh",
-        "less",
-        "most",
-        "moreutils",
-        "uutils-coreutils",
-        "gnome-screenshot",
-        "python-pygments"
+        "zsh-history-substring-search",
+        "zsh-syntax-highlighting"
     ],
-    "parallel_downloads": 0,
+    "pacman_config": {
+        "color": true,
+        "parallel_downloads": 5
+    },
     "profile_config": {
-        "gfx_driver": "Intel (open-source)",
+        "gfx_driver": "All open-source",
         "greeter": "gdm",
         "profile": {
             "custom_settings": {
@@ -200,7 +264,10 @@
     },
     "script": null,
     "services": [],
-    "swap": true,
+    "swap": {
+        "algorithm": "zstd",
+        "enabled": true
+    },
     "timezone": "Asia/Kolkata",
-    "version": "3.0.9"
+    "version": "4.3"
 }
