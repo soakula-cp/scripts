@@ -134,6 +134,8 @@
         "python-docker",
         "python-pygments",
         "ripgrep",
+        "rust",
+        "rustup",
         "sqlitebrowser",
         "sqlite-tcl",
         "sqlite-doc",
